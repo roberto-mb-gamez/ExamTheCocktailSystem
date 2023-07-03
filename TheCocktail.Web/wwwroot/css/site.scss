@@ -1,0 +1,141 @@
+@import "variables.scss";
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+#menu-main {
+    background-color: #1d000d;
+
+    .nav-item {
+        .nav-link {
+            background-color: #c52d2f;
+            color: #fff;
+            margin: 0.2em;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+body {
+    background: $general-background;
+}
+
+#main {
+    .jumbotron {
+        background-color: $general-background;
+        color: $general-color;
+    }
+
+    .busqueda-cocteles {
+        .form-row {
+            width: 80%;
+        }
+    }
+
+    .list-cocktails {
+        color: $general-color;
+
+        a {
+            font-size: 1.1em;
+            font-weight: bold;
+
+            &:link, &:visited {
+                color: #a78d9b;
+                background-color: transparent;
+                text-decoration: none;
+            }
+
+            &:active, &:hover {
+                color: #ffa700;
+                background-color: transparent;
+                text-decoration: none;
+            }
+        }
+
+        .cocktail-item {
+            color: $general-color;
+        }
+    }
+
+    .detail {
+        color: $general-color;
+
+        .bi-heart-red {
+            color: #c52d2f;
+        }
+
+        .drink-title, .ingredients-title {
+            margin-bottom: 1em;
+        }
+
+        .instructions-title {
+            margin-top: 1em;
+        }
+    }
+
+    #notiFavorites {
+        a {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+    }
+
+    #listFavorites {
+        color: $general-color;
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 1em;
+        }
+
+        h2 {
+            font-size: 1.2em;
+        }
+
+        hr {
+            color: #fff;
+            background: #fff;
+        }
+
+        .media-favorite {
+            img {
+                width: 25%;
+            }
+
+            .media-heading {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+.title-error {
+    color: $general-color;
+}
+
+@media (max-width: 768px) {
+    .busqueda-cocteles {
+        .form-control {
+            margin-bottom: 2px;
+        }
+    }
+}

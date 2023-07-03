@@ -1,0 +1,107 @@
+﻿html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+#menu-main {
+  background-color: #1d000d;
+}
+#menu-main .nav-item .nav-link {
+  background-color: #c52d2f;
+  color: #fff;
+  margin: 0.2em;
+}
+#menu-main .nav-item .nav-link:hover {
+  opacity: 0.8;
+}
+
+body {
+  background: #230312;
+}
+
+#main .jumbotron {
+  background-color: #230312;
+  color: #fff;
+}
+#main .busqueda-cocteles .form-row {
+  width: 80%;
+}
+#main .list-cocktails {
+  color: #fff;
+}
+#main .list-cocktails a {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#main .list-cocktails a:link, #main .list-cocktails a:visited {
+  color: #a78d9b;
+  background-color: transparent;
+  text-decoration: none;
+}
+#main .list-cocktails a:active, #main .list-cocktails a:hover {
+  color: #ffa700;
+  background-color: transparent;
+  text-decoration: none;
+}
+#main .list-cocktails .cocktail-item {
+  color: #fff;
+}
+#main .detail {
+  color: #fff;
+}
+#main .detail .bi-heart-red {
+  color: #c52d2f;
+}
+#main .detail .drink-title, #main .detail .ingredients-title {
+  margin-bottom: 1em;
+}
+#main .detail .instructions-title {
+  margin-top: 1em;
+}
+#main #notiFavorites a {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#main #listFavorites {
+  color: #fff;
+}
+#main #listFavorites h1 {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+}
+#main #listFavorites h2 {
+  font-size: 1.2em;
+}
+#main #listFavorites hr {
+  color: #fff;
+  background: #fff;
+}
+#main #listFavorites .media-favorite img {
+  width: 25%;
+}
+#main #listFavorites .media-favorite .media-heading {
+  font-size: 1.2em;
+}
+
+.title-error {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .busqueda-cocteles .form-control {
+    margin-bottom: 2px;
+  }
+}

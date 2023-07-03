@@ -1,0 +1,10 @@
+﻿@model DrinkDTO
+
+<div class="col-md-3">
+    <a asp-action="Detail" asp-route-cocktailId="@Model.idDrink" class="cocktail-item">
+        <div>
+            <img src="@Model.strDrinkThumb" width="95%" />
+        </div>
+        <p class="text-center">@Model.strDrink</p>
+    </a>
+</div>

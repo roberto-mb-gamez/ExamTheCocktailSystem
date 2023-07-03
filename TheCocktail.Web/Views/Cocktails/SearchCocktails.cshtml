@@ -1,0 +1,22 @@
+﻿@model CocktailDbDTO
+
+<section class="list-cocktails">
+    <h1>Cócteles</h1>
+    @if (Model.drinks.Any())
+    {
+        <div class="center">
+            <div class="row">
+                @foreach (var cocktail in Model.drinks)
+                {
+                    @await Html.PartialAsync("_CocktailItem", cocktail)
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <h2>
+            No se encontró información para la búsqueda
+        </h2>
+    }
+</section>

@@ -1,0 +1,79 @@
+﻿@model CocktailDetailDTO
+
+@{
+    var cocktailDetail = Model.CocktailDetail?.drinks.FirstOrDefault();
+}
+
+<div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
+    <div id="notiFavorites" data-delay="4000" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body">
+            <div class="d-flex">
+                <strong class="mr-auto p-2 notiFavoritesTitle"></strong>
+                <a class="p-2 btn btn-outline-dark goFavorites" id="btnGoFavorites"
+                   asp-action="ListFavorites" asp-controller="FavoriteCocktails">Ver</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="detail">
+
+    @if (cocktailDetail is null)
+    {
+        <h1><strong>Información del cóctel</strong></h1>
+        <h2>
+            <p>No se encontro información del cóctel</p>
+        </h2>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="drink-title">
+                    @cocktailDetail.strDrink
+                    <a id="btnAddFavorite"
+                       data-drinkname="@cocktailDetail.strDrink"
+                       data-drinkimage="@cocktailDetail.strDrinkThumb"
+                       data-favoriteid="@(Model.FavoriteInformation.IsFavorite ? Model.FavoriteInformation.FavoriteId : 0)"
+                       data-drinkid="@cocktailDetail.idDrink" 
+                       href="#"
+                       title="@(Model.FavoriteInformation.IsFavorite ? "Quitar de favoritos" : "Agregar a favoritos")">
+                        <i id="icon-favorite"
+                           class="bi @(Model.FavoriteInformation.IsFavorite ? "bi-heart-fill" : "bi-heart") bi-heart-red"></i>
+                    </a>
+                </h2>
+                <img src="@cocktailDetail.strDrinkThumb" width="90%" />
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="ingredients-title">Ingredientes</h3>
+                    </div>
+                    @foreach (var ingredient in cocktailDetail.getIngredients())
+                    {
+                        @if (!string.IsNullOrEmpty(ingredient.Item1))
+                        {
+                            <div class="col-md-4 text-center">
+                                <img class="img-fluid" src="@ingredient.Item2" />
+                                <p>@(ingredient.Item1)</p>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="instructions-title">Instrucciones</h3>
+                <p>
+                    @cocktailDetail.strInstructions
+                </p>
+            </div>
+        </div>
+    }
+</section>
+
+@section Scripts {
+    <script src="~/js/app/cocktails.js" asp-append-version="true"></script>
+}

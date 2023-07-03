@@ -1,0 +1,13 @@
+﻿@model Favorite
+
+<div class="media media-favorite mt-3">
+    <a asp-controller="Cocktails" asp-action="Detail" asp-route-cocktailId="@Model.DrinkId">
+        <img class="align-self-start mr-1" src="@Model.DrinkImage" alt="@Model.DrinkName">
+    </a>
+    <div class="media-body">
+        <h5 class="mt-0">@Model.DrinkName</h5>
+        <button type="button" class="btn btn-danger btnRemoveFavorite" data-favoriteid="@Model.FavoriteId">
+            Eliminar
+        </button>
+    </div>
+</div>

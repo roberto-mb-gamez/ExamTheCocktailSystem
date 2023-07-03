@@ -1,0 +1,39 @@
+﻿@model SearchCocktailsDTO
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1 class="display-4 text-center"><b>Bienvenidos</b></h1>
+    <p class="lead">
+        <strong>
+            En el mundo de la coctelería siempre encontrarás un coctel delicioso para cada tipo de persona. Encontrarás una enorme cantidad de propuestas que son totalmente perfectas para brindar con amigos, familiares y con tu pareja.
+        </strong>
+    </p>
+    <p>
+        En nuestro listado de cocteles exquisitos encontrarás desde los clásicos, como el Mojito o el Cosmopolitan, hasta los tragos más innovadores. Es por eso que queremos compartir contigo nuestra selección de recetas para cocteles, para que triunfes en tus quedadas con amigos o en tus reuniones familiares. ¡Porque nada triunfa más que preparar deliciosos cocteles tras una buena cena!
+    </p>
+</div>
+
+<section class="busqueda-cocteles">
+
+    <form asp-action="SearchCocktails" method="get" class="d-flex justify-content-center flex-nowrap">
+        <div class="form-row align-items-center">
+            <div class="col-sm-6">
+                <input asp-for="Search" type="text" class="form-control" id="txtBuscarCocktail" placeholder="Buscar por Coctel o Ingrediente...">
+            </div>
+            <div class="col-sm-3">
+                <select asp-for="TipoBusqueda" class="form-control mr-sm-2" id="ddlTipoBusqueda">
+                    <option value="1">Por nombre</option>
+                    <option value="2">Por ingrediente</option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <button type="submit" class="btn btn-primary">
+                    Buscar <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</section>

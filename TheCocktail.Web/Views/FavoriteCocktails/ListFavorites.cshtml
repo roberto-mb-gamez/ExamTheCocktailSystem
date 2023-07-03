@@ -1,0 +1,49 @@
+﻿@model List<Favorite>
+
+<section id="listFavorites">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>
+                Tus cócteles favoritos
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <span class="lead">
+                <strong id="totalFavorites">@(Model.Count == 1 ? "1 cóctel" : $"{Model.Count} cócteles")</strong>
+            </span>
+            <hr />
+        </div>
+    </div>
+    @if (Model.Any())
+    {
+        foreach (var favorite in Model)
+        {
+            @await Html.PartialAsync("_FavoriteItem", favorite)
+        }
+    }
+</section>
+
+<div id="modalConfirmRemove" class="modal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Eliminar favorito</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>¿Confirmas que quieres eliminar este cóctel de tu lista?</p>
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" class="btn btn-lg btn-primary" id="btnConfirmRemove">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/app/favorite.js" asp-append-version="true"></script>
+}
